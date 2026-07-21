@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="你的名字的个人网站，展示项目、经历、文章与联系方式。">
+    <meta property="og:title" content="你的名字 | 个人网站">
+    <meta property="og:description" content="构建有温度、有秩序、能真正解决问题的数字产品。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/hero-workspace.png">
+    <title>你的名字 | 个人网站</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="回到首页">
+        <span class="brand-mark">N</span>
+        <span>你的名字</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#work">项目</a>
+        <a href="#experience">经历</a>
+        <a href="#notes">笔记</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="打开导航" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/hero-workspace.png" alt="">
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Product Builder / Developer / Writer</p>
+          <h1 id="hero-title">你的名字</h1>
+          <p class="hero-lede">我把复杂问题整理成清晰、可靠、让人愿意使用的产品体验。</p>
+          <div class="hero-actions" aria-label="主要操作">
+            <a class="button primary" href="#work">查看项目</a>
+            <a class="button secondary" href="mailto:hello@example.com">发邮件</a>
+          </div>
+          <dl class="quick-facts" aria-label="个人摘要">
+            <div>
+              <dt>位置</dt>
+              <dd>中国 / 远程</dd>
+            </div>
+            <div>
+              <dt>方向</dt>
+              <dd>Web、AI 工具、产品工程</dd>
+            </div>
+            <div>
+              <dt>状态</dt>
+              <dd>开放合作</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">关于我</h2>
+        </div>
+        <div class="about-grid">
+          <p class="large-copy">我关注产品从想法到落地的完整过程：梳理需求、设计信息架构、写出稳定代码，并通过反馈持续打磨体验。</p>
+          <div class="about-copy">
+            <p>这里可以换成你的真实简介，例如你目前的职业、擅长领域、正在探索的方向，以及你希望别人通过这个网站了解你的哪一面。</p>
+            <p>如果你是开发者，可以写技术栈和代表项目；如果你是设计师、研究者、创作者，也可以把这一段改成作品主题和个人方法。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Selected Work</p>
+            <h2 id="work-title">精选项目</h2>
+          </div>
+          <a class="text-link" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-meta">
+              <span>Web App</span>
+              <span>2026</span>
+            </div>
+            <h3>项目名称一</h3>
+            <p>一句话说明这个项目解决了什么问题、你的角色是什么，以及它最值得看的亮点。</p>
+            <ul class="tag-list" aria-label="技术标签">
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Design System</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-meta">
+              <span>AI Tool</span>
+              <span>2025</span>
+            </div>
+            <h3>项目名称二</h3>
+            <p>展示一个自动化、AI 辅助、数据分析或内容生产相关项目，用结果指标让访问者快速理解价值。</p>
+            <ul class="tag-list" aria-label="技术标签">
+              <li>Python</li>
+              <li>OpenAI API</li>
+              <li>Automation</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-meta">
+              <span>Research</span>
+              <span>2024</span>
+            </div>
+            <h3>项目名称三</h3>
+            <p>适合放研究、写作、开源库或课程项目。可以链接到文章、演示地址或代码仓库。</p>
+            <ul class="tag-list" aria-label="技术标签">
+              <li>UX</li>
+              <li>Data</li>
+              <li>Writing</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2 id="experience-title">经历</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <time datetime="2024">2024 - 至今</time>
+            <div>
+              <h3>当前职位 / 当前身份</h3>
+              <p>描述你现在主要负责的事情、工作方法和成果，例如上线产品、提升转化、优化流程或维护开源项目。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <time datetime="2022">2022 - 2024</time>
+            <div>
+              <h3>上一段经历</h3>
+              <p>写出最能说明能力的职责和结果，避免堆砌名词，让访问者能快速判断你适合做什么。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <time datetime="2020">2020 - 2022</time>
+            <div>
+              <h3>教育 / 项目 / 自由职业</h3>
+              <p>这里可以放学校、社群、自由职业、比赛、出版物或任何对个人叙事有帮助的经历。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section notes-section" id="notes" aria-labelledby="notes-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Notes</p>
+            <h2 id="notes-title">最近笔记</h2>
+          </div>
+          <a class="text-link" href="#contact">订阅更新</a>
+        </div>
+        <div class="notes-list">
+          <a class="note-row" href="#" aria-label="打开笔记：如何把一个模糊想法变成可执行项目">
+            <time datetime="2026-07-21">2026.07.21</time>
+            <span>如何把一个模糊想法变成可执行项目</span>
+          </a>
+          <a class="note-row" href="#" aria-label="打开笔记：我如何整理个人知识库">
+            <time datetime="2026-06-08">2026.06.08</time>
+            <span>我如何整理个人知识库</span>
+          </a>
+          <a class="note-row" href="#" aria-label="打开笔记：产品工程里的审美与秩序">
+            <time datetime="2026-05-16">2026.05.16</time>
+            <span>产品工程里的审美与秩序</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">一起做点有意思的事。</h2>
+          <p>如果你想聊产品、工程、写作、合作或新的机会，可以从邮件或社交账号找到我。</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:hello@example.com">hello@example.com</a>
+          <a class="button secondary" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-year></span> 你的名字</span>
+      <a href="#home">回到顶部</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
