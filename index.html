@@ -1,206 +1,573 @@
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="你的名字的个人网站，展示项目、经历、文章与联系方式。">
-    <meta property="og:title" content="你的名字 | 个人网站">
-    <meta property="og:description" content="构建有温度、有秩序、能真正解决问题的数字产品。">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/hero-workspace.png">
-    <title>你的名字 | 个人网站</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#home" aria-label="回到首页">
-        <span class="brand-mark">N</span>
-        <span>你的名字</span>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ==================================================================
+       PAGE TITLE, SEO & SOCIAL PREVIEW
+       All copy is real. The email address is the one remaining placeholder.
+       Add an og:image here later if you want a richer link preview.
+       ================================================================== -->
+  <title>Yichi Zhang — Finance Student &amp; AI Builder</title>
+  <meta name="description" content="Yichi Zhang is a first-year finance student at South China Normal University, exploring AI agents, AIGC and vibe coding." />
+  <meta name="author" content="Yichi Zhang" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#f6f1e7" />
+  <link rel="canonical" href="https://luoshen317-cloud.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Yichi Zhang" />
+  <meta property="og:title" content="Yichi Zhang — Finance Student &amp; AI Builder" />
+  <meta property="og:description" content="Yichi Zhang is a first-year finance student at South China Normal University, exploring AI agents, AIGC and vibe coding." />
+  <meta property="og:url" content="https://luoshen317-cloud.github.io/" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Yichi Zhang" />
+  <meta name="twitter:description" content="Yichi Zhang is a first-year finance student at South China Normal University, exploring AI agents, AIGC and vibe coding." />
+
+  <!-- Favicon: inline SVG, no extra file needed -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%23f6f1e7'/%3E%3Cpath%20d='M19%2017L32%2033L45%2017M32%2033V49'%20fill='none'%20stroke='%2314130f'%20stroke-width='2.4'%20stroke-linecap='square'/%3E%3Ccircle%20cx='48'%20cy='16'%20r='3'%20fill='%23b0603a'/%3E%3C/svg%3E" />
+
+  <!-- Typography: Fraunces (serif display) + Instrument Sans (grotesk body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Instrument+Sans:ital,wght@0,400..600;1,400..500&display=swap" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Flag JS support before first paint, so scroll reveals never flash -->
+  <script>document.documentElement.classList.remove("no-js");</script>
+  <script src="script.js" defer></script>
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yichi Zhang",
+    "url": "https://luoshen317-cloud.github.io/",
+    "jobTitle": "Finance Student & AI Builder",
+    "description": "First-year finance student at South China Normal University, exploring AI agents, AIGC and vibe coding.",
+    "email": "mailto:2338919183@qq.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Guangzhou",
+      "addressCountry": "China"
+    },
+    "sameAs": [
+      "https://github.com/luoshen317-cloud",
+      "https://space.bilibili.com/3546980047391224"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Decorative page chrome: scroll progress, cursor warmth, intro curtain -->
+  <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+  <div class="cursor-glow" aria-hidden="true" data-cursor-glow></div>
+  <div class="intro-curtain" aria-hidden="true"></div>
+
+  <!-- ==================================================================
+       HEADER / PRIMARY NAVIGATION
+       The nav anchors must keep their exact ids (#about, #work ...).
+       ================================================================== -->
+  <header class="site-header" data-header>
+    <div class="shell header-inner">
+      <a class="brand" href="#home" aria-label="Yichi Zhang — home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Yichi Zhang</span>
       </a>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="#about">关于</a>
-        <a href="#work">项目</a>
-        <a href="#experience">经历</a>
-        <a href="#notes">笔记</a>
-        <a href="#contact">联系</a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="#about"><span class="nav-num" aria-hidden="true">01</span>About</a>
+        <a class="nav-link" href="#work"><span class="nav-num" aria-hidden="true">02</span>Now</a>
+        <a class="nav-link" href="#experience"><span class="nav-num" aria-hidden="true">03</span>Experience</a>
+        <a class="nav-link" href="#notes"><span class="nav-num" aria-hidden="true">04</span>Notes</a>
+        <a class="nav-cta" href="#contact" data-tilt data-tilt-strength="2.4">Contact</a>
       </nav>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-label="打开导航" aria-expanded="false">
-        <span></span>
-        <span></span>
+
+      <button class="menu-open" type="button" aria-controls="menu" aria-expanded="false" data-menu-open>
+        <span>Menu</span>
+        <span class="menu-bars" aria-hidden="true"><span></span><span></span></span>
       </button>
-    </header>
+    </div>
+  </header>
 
-    <main id="home">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true">
-          <img src="assets/hero-workspace.png" alt="">
+  <!-- Mobile navigation panel. Native <dialog> handles focus and Escape. -->
+  <dialog class="menu" id="menu" aria-labelledby="menu-heading" tabindex="-1">
+    <div class="shell menu-inner">
+      <div class="menu-head">
+        <p class="menu-heading" id="menu-heading">Yichi Zhang</p>
+        <button class="menu-close" type="button" data-menu-close>
+          <span>Close</span>
+          <span class="menu-close-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <nav class="menu-nav" aria-label="Sections">
+        <a href="#about"><span>01</span>About</a>
+        <a href="#work"><span>02</span>Now</a>
+        <a href="#experience"><span>03</span>Experience</a>
+        <a href="#notes"><span>04</span>Notes</a>
+        <a href="#contact"><span>05</span>Contact</a>
+      </nav>
+
+      <div class="menu-foot">
+        <a class="menu-email" href="mailto:2338919183@qq.com">2338919183@qq.com</a>
+        <div class="menu-social">
+          <a href="https://github.com/luoshen317-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">GitHub</a>
+          <a href="https://space.bilibili.com/3546980047391224" target="_blank" rel="noreferrer" aria-label="Bilibili (opens in a new tab)">BILIBILI</a>
         </div>
-        <div class="hero-content">
-          <p class="eyebrow">Product Builder / Developer / Writer</p>
-          <h1 id="hero-title">你的名字</h1>
-          <p class="hero-lede">我把复杂问题整理成清晰、可靠、让人愿意使用的产品体验。</p>
-          <div class="hero-actions" aria-label="主要操作">
-            <a class="button primary" href="#work">查看项目</a>
-            <a class="button secondary" href="mailto:hello@example.com">发邮件</a>
+      </div>
+    </div>
+  </dialog>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ================================================================
+         01 / HERO
+         The oversized name is split into two lines. Keep each line short
+         (one word is ideal) if you edit it.
+         ================================================================ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="ambient ambient--hero" aria-hidden="true">
+        <span class="blob blob--a"></span>
+        <span class="blob blob--b"></span>
+        <span class="blob blob--c"></span>
+      </div>
+
+      <div class="shell hero-inner">
+        <div class="hero-top">
+          <p class="hero-eyebrow">Finance student · AI builder · Content creator</p>
+          <p class="hero-edition">Guangzhou · 2026</p>
+        </div>
+
+        <div class="hero-body">
+          <h1 class="hero-title" id="hero-title" data-hero-title>
+            <span class="hero-line"><span class="hero-line-in">Yichi</span></span>
+            <span class="hero-line hero-line--outline"><span class="hero-line-in">Zhang</span></span>
+          </h1>
+
+          <div class="hero-aside">
+            <div class="seal" aria-hidden="true" data-draw>
+              <svg class="seal-svg" viewBox="0 0 120 120" fill="none" focusable="false">
+                <circle class="seal-orbit" cx="60" cy="60" r="56" pathLength="1" stroke="currentColor" stroke-width="0.7" opacity="0.45" />
+                <defs>
+                  <path id="seal-ring-path" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0" />
+                </defs>
+                <g class="seal-ring">
+                  <text class="seal-text">
+                    <textPath href="#seal-ring-path" startOffset="0" textLength="282" lengthAdjust="spacing">OPEN TO COLLABORATE · 2026 ·</textPath>
+                  </text>
+                </g>
+                <g class="seal-star" stroke-linecap="square">
+                  <path d="M60 46v28M46 60h28M50.1 50.1l19.8 19.8M69.9 50.1L50.1 69.9" pathLength="1" />
+                </g>
+              </svg>
+            </div>
+
+            <p class="hero-lede" data-words>A first-year finance student at South China Normal University, learning to build with AI agents, AIGC and vibe coding — and writing about the climb.</p>
+
+            <div class="hero-actions">
+              <a class="button" href="#work" data-tilt data-tilt-strength="3.2">
+                See what I’m doing
+                <svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M8 2v11M3.5 9.5 8 14l4.5-4.5" stroke="currentColor" stroke-width="1.2" />
+                </svg>
+              </a>
+              <a class="text-link" href="#contact">Get in touch</a>
+            </div>
           </div>
-          <dl class="quick-facts" aria-label="个人摘要">
-            <div>
-              <dt>位置</dt>
-              <dd>中国 / 远程</dd>
-            </div>
-            <div>
-              <dt>方向</dt>
-              <dd>Web、AI 工具、产品工程</dd>
-            </div>
-            <div>
-              <dt>状态</dt>
-              <dd>开放合作</dd>
-            </div>
-          </dl>
         </div>
-      </section>
 
-      <section class="section about-section" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">关于我</h2>
+        <ul class="hero-meta" role="list">
+          <li>
+            <span class="meta-label">Based in</span>
+            <span class="meta-value">Guangzhou, China</span>
+          </li>
+          <li>
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">AI agents · AIGC · Vibe coding</span>
+          </li>
+          <li>
+            <span class="meta-label">Status</span>
+            <span class="meta-value"><span class="status-dot" aria-hidden="true"></span>First-year student, open to collaborate</span>
+          </li>
+          <li class="meta-time">
+            <span class="meta-label">Local time</span>
+            <time class="meta-value" data-clock>—</time>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Decorative marquee. The same information is in the page text. -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>Yichi Zhang</span><span class="ticker-dot"></span>
+          <span>Finance student</span><span class="ticker-dot"></span>
+          <span>AI builder</span><span class="ticker-dot"></span>
+          <span>Content creator</span><span class="ticker-dot"></span>
+          <span>Guangzhou, China</span><span class="ticker-dot"></span>
+          <span>Open to collaborate</span><span class="ticker-dot"></span>
+          <span>2026</span><span class="ticker-dot"></span>
         </div>
-        <div class="about-grid">
-          <p class="large-copy">我关注产品从想法到落地的完整过程：梳理需求、设计信息架构、写出稳定代码，并通过反馈持续打磨体验。</p>
-          <div class="about-copy">
-            <p>这里可以换成你的真实简介，例如你目前的职业、擅长领域、正在探索的方向，以及你希望别人通过这个网站了解你的哪一面。</p>
-            <p>如果你是开发者，可以写技术栈和代表项目；如果你是设计师、研究者、创作者，也可以把这一段改成作品主题和个人方法。</p>
+        <div class="ticker-group">
+          <span>Yichi Zhang</span><span class="ticker-dot"></span>
+          <span>Finance student</span><span class="ticker-dot"></span>
+          <span>AI builder</span><span class="ticker-dot"></span>
+          <span>Content creator</span><span class="ticker-dot"></span>
+          <span>Guangzhou, China</span><span class="ticker-dot"></span>
+          <span>Open to collaborate</span><span class="ticker-dot"></span>
+          <span>2026</span><span class="ticker-dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         02 / ABOUT
+         Two short paragraphs, a signature, and a facts list.
+         ================================================================ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="shell section-shell">
+        <div class="section-rail">
+          <p class="section-label"><span class="section-num">01</span><span>About</span></p>
+        </div>
+
+        <div class="section-main">
+          <header class="section-heading">
+            <h2 class="section-title" id="about-title" data-reveal>Finance by day, building with <em>AI</em> the rest of the time.</h2>
+            <p class="section-intro" data-reveal data-words>First year at South China Normal University — an island campus in Panyu, Guangzhou. A long way to go, and that’s rather the point.</p>
+          </header>
+
+          <div class="about-grid">
+          <div class="about-copy" data-reveal>
+            <p class="about-lede" data-words>I’m a finance undergraduate who got curious about what one person can build with AI — and never quite stopped. Most of what I know came from opening an editor, breaking something, and trying again.</p>
+            <p>Alongside coursework I’m a content creator, documenting what learning this actually looks like from zero: the tools, the dead ends, the small wins. I also serve as an operations officer at the Digital Intelligence Business Association, where I help run events and keep projects moving.</p>
+            <p class="about-sign">— Yichi Zhang</p>
+          </div>
+
+          <aside class="about-facts" data-reveal aria-label="Details">
+            <dl>
+              <div class="fact">
+                <dt>Based in</dt>
+                <dd>University Town, Panyu · Guangzhou</dd>
+              </div>
+              <div class="fact">
+                <dt>Focus</dt>
+                <dd>AI agents, AIGC, vibe coding</dd>
+              </div>
+              <div class="fact">
+                <dt>Currently</dt>
+                <dd>First year, BSc Finance</dd>
+              </div>
+              <div class="fact">
+                <dt>Also</dt>
+                <dd>Content creator · Operations officer</dd>
+              </div>
+            </dl>
+          </aside>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" id="work" aria-labelledby="work-title">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Selected Work</p>
-            <h2 id="work-title">精选项目</h2>
+    <!-- ================================================================
+         03 / NOW
+         Three honest threads of work. Duplicate an <article> to add a
+         fourth; the layout adapts. The marks are inline SVG, not images.
+         ================================================================ -->
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="shell section-shell">
+        <div class="section-rail">
+          <p class="section-label"><span class="section-num">02</span><span>Now</span></p>
+        </div>
+
+        <div class="section-main">
+          <header class="section-heading">
+            <h2 class="section-title" id="work-title" data-reveal>What I’m working on</h2>
+            <p class="section-intro" data-reveal data-words>No finished case studies yet — this is the honest version. Three things take up most of my time right now.</p>
+          </header>
+
+          <div class="work-list">
+          <article class="work-item" data-reveal data-tilt data-tilt-strength="1.6">
+            <div class="work-aside">
+              <span class="work-index" aria-hidden="true">01</span>
+              <svg class="work-mark" viewBox="0 0 56 56" fill="none" aria-hidden="true" focusable="false">
+                <circle cx="28" cy="28" r="19" stroke="currentColor" stroke-width="1" pathLength="1" />
+                <circle cx="28" cy="28" r="8" stroke="currentColor" stroke-width="1" pathLength="1" />
+                <path d="M28 3v10M28 43v10M3 28h10M43 28h10" stroke="currentColor" stroke-width="1" pathLength="1" />
+              </svg>
+            </div>
+            <div class="work-body">
+              <h3 class="work-title">Learning by shipping</h3>
+              <p class="work-desc">Small tools and AI-agent experiments, built to understand how the pieces fit rather than to look finished.</p>
+              <ul class="work-tags" role="list">
+                <li>AI agents</li>
+                <li>AIGC</li>
+                <li>Vibe coding</li>
+              </ul>
+            </div>
+            <div class="work-meta">
+              <span class="work-year">2026 —</span>
+            </div>
+          </article>
+
+          <article class="work-item" data-reveal data-tilt data-tilt-strength="1.6">
+            <div class="work-aside">
+              <span class="work-index" aria-hidden="true">02</span>
+              <svg class="work-mark" viewBox="0 0 56 56" fill="none" aria-hidden="true" focusable="false">
+                <circle cx="28" cy="28" r="19" stroke="currentColor" stroke-width="1" opacity="0.55" pathLength="1" />
+                <g fill="currentColor">
+                  <circle cx="12" cy="12" r="1.4" />
+                  <circle cx="28" cy="12" r="1.4" />
+                  <circle cx="44" cy="12" r="1.4" />
+                  <circle cx="12" cy="28" r="1.4" />
+                  <circle cx="44" cy="28" r="1.4" />
+                  <circle cx="12" cy="44" r="1.4" />
+                  <circle cx="28" cy="44" r="1.4" />
+                  <circle cx="44" cy="44" r="1.4" />
+                </g>
+                <circle cx="28" cy="28" r="4" fill="currentColor" />
+              </svg>
+            </div>
+            <div class="work-body">
+              <h3 class="work-title">Writing on the way up</h3>
+              <p class="work-desc">Short videos on games, AI tools and whatever caught my attention that week — a small audience, but a real habit of publishing.</p>
+              <ul class="work-tags" role="list">
+                <li>Content</li>
+                <li>Video</li>
+                <li>Writing</li>
+              </ul>
+            </div>
+            <div class="work-meta">
+              <span class="work-year">ONGOING</span>
+            </div>
+          </article>
+
+          <article class="work-item" data-reveal data-tilt data-tilt-strength="1.6">
+            <div class="work-aside">
+              <span class="work-index" aria-hidden="true">03</span>
+              <svg class="work-mark" viewBox="0 0 56 56" fill="none" aria-hidden="true" focusable="false">
+                <path d="M4 40c8-16 16-16 24 0s16 16 24 0" stroke="currentColor" stroke-width="1" pathLength="1" />
+                <path d="M4 32c8-16 16-16 24 0s16 16 24 0" stroke="currentColor" stroke-width="1" pathLength="1" />
+                <path d="M4 24c8-16 16-16 24 0s16 16 24 0" stroke="currentColor" stroke-width="1" pathLength="1" />
+              </svg>
+            </div>
+            <div class="work-body">
+              <h3 class="work-title">Operations, in practice</h3>
+              <p class="work-desc">Running events and keeping things moving as an operations officer at the Digital Intelligence Business Association.</p>
+              <ul class="work-tags" role="list">
+                <li>Operations</li>
+                <li>Events</li>
+                <li>Teamwork</li>
+              </ul>
+            </div>
+            <div class="work-meta">
+              <span class="work-year">2026 —</span>
+            </div>
+          </article>
           </div>
-          <a class="text-link" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
         </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-meta">
-              <span>Web App</span>
-              <span>2026</span>
-            </div>
-            <h3>项目名称一</h3>
-            <p>一句话说明这个项目解决了什么问题、你的角色是什么，以及它最值得看的亮点。</p>
-            <ul class="tag-list" aria-label="技术标签">
-              <li>React</li>
-              <li>TypeScript</li>
-              <li>Design System</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <div class="project-meta">
-              <span>AI Tool</span>
-              <span>2025</span>
-            </div>
-            <h3>项目名称二</h3>
-            <p>展示一个自动化、AI 辅助、数据分析或内容生产相关项目，用结果指标让访问者快速理解价值。</p>
-            <ul class="tag-list" aria-label="技术标签">
-              <li>Python</li>
-              <li>OpenAI API</li>
-              <li>Automation</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <div class="project-meta">
-              <span>Research</span>
-              <span>2024</span>
-            </div>
-            <h3>项目名称三</h3>
-            <p>适合放研究、写作、开源库或课程项目。可以链接到文章、演示地址或代码仓库。</p>
-            <ul class="tag-list" aria-label="技术标签">
-              <li>UX</li>
-              <li>Data</li>
-              <li>Writing</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section experience-section" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading">
-          <p class="eyebrow">Experience</p>
-          <h2 id="experience-title">经历</h2>
+    <!-- Ticker band: a quiet breath between work and experience. -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>Yichi Zhang</span><span class="ticker-dot"></span>
+          <span>Finance student</span><span class="ticker-dot"></span>
+          <span>AI builder</span><span class="ticker-dot"></span>
+          <span>Content creator</span><span class="ticker-dot"></span>
+          <span>Guangzhou, China</span><span class="ticker-dot"></span>
+          <span>Open to collaborate</span><span class="ticker-dot"></span>
+          <span>2026</span><span class="ticker-dot"></span>
         </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <time datetime="2024">2024 - 至今</time>
-            <div>
-              <h3>当前职位 / 当前身份</h3>
-              <p>描述你现在主要负责的事情、工作方法和成果，例如上线产品、提升转化、优化流程或维护开源项目。</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <time datetime="2022">2022 - 2024</time>
-            <div>
-              <h3>上一段经历</h3>
-              <p>写出最能说明能力的职责和结果，避免堆砌名词，让访问者能快速判断你适合做什么。</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <time datetime="2020">2020 - 2022</time>
-            <div>
-              <h3>教育 / 项目 / 自由职业</h3>
-              <p>这里可以放学校、社群、自由职业、比赛、出版物或任何对个人叙事有帮助的经历。</p>
-            </div>
-          </article>
+        <div class="ticker-group">
+          <span>Yichi Zhang</span><span class="ticker-dot"></span>
+          <span>Finance student</span><span class="ticker-dot"></span>
+          <span>AI builder</span><span class="ticker-dot"></span>
+          <span>Content creator</span><span class="ticker-dot"></span>
+          <span>Guangzhou, China</span><span class="ticker-dot"></span>
+          <span>Open to collaborate</span><span class="ticker-dot"></span>
+          <span>2026</span><span class="ticker-dot"></span>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section class="section notes-section" id="notes" aria-labelledby="notes-title">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Notes</p>
-            <h2 id="notes-title">最近笔记</h2>
-          </div>
-          <a class="text-link" href="#contact">订阅更新</a>
+    <!-- ================================================================
+         04 / EXPERIENCE
+         Three entries: period, role, organisation, and one sentence.
+         ================================================================ -->
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="shell exp-layout">
+        <div class="exp-head">
+          <p class="section-label"><span class="section-num">03</span><span>Experience</span></p>
+          <h2 class="section-title" id="experience-title" data-reveal>Figuring it out in <em>public</em>.</h2>
+          <p class="section-intro" data-reveal data-words>Coursework, a student association, and a lot of late-night building.</p>
         </div>
-        <div class="notes-list">
-          <a class="note-row" href="#" aria-label="打开笔记：如何把一个模糊想法变成可执行项目">
-            <time datetime="2026-07-21">2026.07.21</time>
-            <span>如何把一个模糊想法变成可执行项目</span>
+
+        <div class="exp-list">
+          <article class="exp-item" data-reveal>
+            <p class="exp-period">2026 — Now</p>
+            <div class="exp-role">
+              <h3>BSc Finance — South China Normal University</h3>
+              <p class="exp-line">School of Economics and Management. Economics, accounting and quantitative methods, alongside self-directed work with AI tools.</p>
+            </div>
+          </article>
+
+          <article class="exp-item" data-reveal>
+            <p class="exp-period">2026 — Now</p>
+            <div class="exp-role">
+              <h3>Operations Officer — Digital Intelligence Business Association</h3>
+              <p class="exp-line">General Operations Department. Event planning, coordination and day-to-day execution for the association’s programmes.</p>
+            </div>
+          </article>
+
+          <article class="exp-item" data-reveal>
+            <p class="exp-period">ONGOING</p>
+            <div class="exp-role">
+              <h3>Content Creator — Independent</h3>
+              <p class="exp-line">Publishing short videos on games and AI tools on Bilibili. Small channel, steady output — one clip has passed 10,000 views.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         05 / NOTES
+         Three rows: date + title. Wrap a title in <a> later if you
+         publish the essay somewhere.
+         ================================================================ -->
+    <section class="section notes" id="notes" aria-labelledby="notes-title">
+      <div class="shell notes-layout">
+        <div class="notes-head">
+          <p class="section-label"><span class="section-num">04</span><span>Notes</span></p>
+          <h2 class="section-title" id="notes-title" data-reveal>Notes</h2>
+          <p class="section-intro" data-reveal data-words>Nothing published yet. The first piece is being written — slowly, and in public.</p>
+        </div>
+
+        <ol class="notes-list" role="list">
+          <li class="note" data-reveal>
+            <span class="note-date">In progress</span>
+            <a class="note-title" href="https://github.com/luoshen317-cloud" target="_blank" rel="noopener noreferrer">Learning in public: my first three months with AI tools</a>
+          </li>
+          <li class="note note--follow" data-reveal>
+            <span class="note-date" aria-hidden="true"></span>
+            <a class="note-title" href="https://github.com/luoshen317-cloud" target="_blank" rel="noopener noreferrer">Follow along on GitHub <span aria-hidden="true">→</span></a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- The final ticker hands the page over to the contact section. -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>Yichi Zhang</span><span class="ticker-dot"></span>
+          <span>Finance student</span><span class="ticker-dot"></span>
+          <span>AI builder</span><span class="ticker-dot"></span>
+          <span>Content creator</span><span class="ticker-dot"></span>
+          <span>Guangzhou, China</span><span class="ticker-dot"></span>
+          <span>Open to collaborate</span><span class="ticker-dot"></span>
+          <span>2026</span><span class="ticker-dot"></span>
+        </div>
+        <div class="ticker-group">
+          <span>Yichi Zhang</span><span class="ticker-dot"></span>
+          <span>Finance student</span><span class="ticker-dot"></span>
+          <span>AI builder</span><span class="ticker-dot"></span>
+          <span>Content creator</span><span class="ticker-dot"></span>
+          <span>Guangzhou, China</span><span class="ticker-dot"></span>
+          <span>Open to collaborate</span><span class="ticker-dot"></span>
+          <span>2026</span><span class="ticker-dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================
+         06 / CONTACT
+         Email, social links, and a short note about availability.
+         ================================================================ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="ambient ambient--contact" aria-hidden="true">
+        <span class="blob blob--b"></span>
+        <span class="blob blob--c"></span>
+      </div>
+
+      <div class="shell">
+        <div class="contact-top">
+          <p class="section-label"><span class="section-num">05</span><span>Contact</span></p>
+          <p class="contact-status"><span class="status-dot" aria-hidden="true"></span>Open to collaborate — 2026</p>
+        </div>
+
+        <h2 class="contact-title" id="contact-title" data-reveal>Let’s build something — or just <em>argue</em> about it.</h2>
+
+        <div class="contact-grid">
+          <a class="contact-email" href="mailto:2338919183@qq.com" data-reveal data-tilt data-tilt-strength="1.6">
+            <span>2338919183@qq.com</span>
+            <svg class="icon" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+              <path d="M4 12 12 4M5 4h7v7" stroke="currentColor" stroke-width="1.2" />
+            </svg>
           </a>
-          <a class="note-row" href="#" aria-label="打开笔记：我如何整理个人知识库">
-            <time datetime="2026-06-08">2026.06.08</time>
-            <span>我如何整理个人知识库</span>
+
+          <div class="contact-details" data-reveal>
+            <p data-words>I’m early in all of this, which means I have time, curiosity, and no fixed idea of where it goes. If you’re building with AI, or want to compare notes, I’d like to hear from you.</p>
+            <ul class="contact-social" role="list">
+              <li><a href="https://github.com/luoshen317-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">GitHub</a></li>
+              <li><a href="https://space.bilibili.com/3546980047391224" target="_blank" rel="noreferrer" aria-label="Bilibili (opens in a new tab)">BILIBILI</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================================
+       FOOTER
+       ================================================================== -->
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-main">
+        <div class="footer-brand-col">
+          <a class="footer-brand" href="#home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Yichi Zhang</span>
           </a>
-          <a class="note-row" href="#" aria-label="打开笔记：产品工程里的审美与秩序">
-            <time datetime="2026-05-16">2026.05.16</time>
-            <span>产品工程里的审美与秩序</span>
-          </a>
+          <p class="footer-tagline">Finance student at South China Normal University. Building with AI, writing about the climb.</p>
         </div>
-      </section>
 
-      <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">一起做点有意思的事。</h2>
-          <p>如果你想聊产品、工程、写作、合作或新的机会，可以从邮件或社交账号找到我。</p>
+        <nav class="footer-nav" aria-label="Footer">
+          <p class="footer-label">Index</p>
+          <a href="#about">About</a>
+          <a href="#work">Now</a>
+          <a href="#experience">Experience</a>
+          <a href="#notes">Notes</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-elsewhere">
+          <p class="footer-label">Elsewhere</p>
+          <a href="mailto:2338919183@qq.com">Email</a>
+          <a href="https://github.com/luoshen317-cloud" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">GitHub</a>
+          <a href="https://space.bilibili.com/3546980047391224" target="_blank" rel="noreferrer" aria-label="Bilibili (opens in a new tab)">BILIBILI</a>
         </div>
-        <div class="contact-actions">
-          <a class="button primary" href="mailto:hello@example.com">hello@example.com</a>
-          <a class="button secondary" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-      </section>
-    </main>
+      </div>
 
-    <footer class="site-footer">
-      <span>© <span data-year></span> 你的名字</span>
-      <a href="#home">回到顶部</a>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+      <div class="footer-base">
+        <p>© 2026 Yichi Zhang. All rights reserved.</p>
+        <p class="footer-colophon">Set in Fraunces &amp; Instrument Sans. Built by hand with HTML, CSS, and a little JavaScript.</p>
+        <a class="footer-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
